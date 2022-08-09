@@ -1,0 +1,82 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/blog/blog.css'%}">
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<script>
+    const vm = new Vue({
+        delimiters: ['{$', '$}'],
+        el: '#comentario',
+        data:{
+            username: 'andrew',
+            fechaPublicacion: 12,
+            numComments: 12 ,
+            comments: [],
+            newTitle: '',
+            newText: ''
+        },
+
+        methods:{
+            hacerComentario(){
+                this.comments.push({
+                    titulo: this.newTitle,
+                    texto: this.newText
+                })
+
+                this.newTitle= '';
+                this.newText='';
+                console.log(this.comments);
+            }
+        }
+    });
+</script>
+{% endblock%}
+
+{% block contenido %}
+<div id="comentario">
+
+    <section class="comment">
+        <h2>Writte Down a Comment</h2>
+        <div class="content-form" >
+            <div class="inputs">
+                <div class="form-group" id="form">
+                    <label for="title">Title</label>
+                    <input type="text" id="title"v-model="newTitle">
+                </div>
+                <div class="form-group">
+                    <label for="text">Text</label>
+                    <input type="text" id="title" v-model="newText">
+                </div>
+            </div>
+            <button class="button-comment" @click="hacerComentario()">Submit</button>
+        </div>
+    
+        <div class="resume-comments">
+            <button class="button-comment">Comments</button>
+            <p>{$  numComments $} Comments <i class="ri-discuss-line"></i></p>
+        </div>
+    
+        <hr>
+    </section>
+    
+    <section class="comentarios" id="comentarios">
+        <article class="comentario" v-for="comentario in comments">
+            <div class="title-comentario">
+                <div class="info-user">
+                    <p>{$username$} - </p>
+                    <h2>{$ comentario.titulo $}</h2>
+                </div>
+                <p>{$ fechaPublicacion $}</p>
+            </div>
+            
+            <p>{$ comentario.texto $}</p>
+        </article>
+    </section>
+</div>
+
+{% endblock%}

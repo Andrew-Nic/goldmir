@@ -1,0 +1,22 @@
+:root{
+    --header-height: 80px;
+
+    /* font sizes - titles*/
+    --font-size-tittle-eslogan: 60pt;
+    --font-size-tittle-eslogan-2: 18pt;
+    --font-size-tittle-1: 40pt;
+    --font-size-tittle-2: 25pt;
+    --font-size-tittle-3: 20pt;
+
+
+    /* font sizes - parrafos y botones */
+    --font-size-text: 15pt;
+}
+
+body{
+    background-color: rgb(251, 251, 251);
+}
+
+*{
+    font-family: "GlacialIndifference";
+}

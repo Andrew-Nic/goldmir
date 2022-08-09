@@ -1,0 +1,89 @@
+.home{
+    margin-top: var(--header-height);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(180deg, #dadada, #dadada, #8e8e8eAA,#dadada,#dadada ,#fff);
+    z-index: -12;
+}
+.presentation{
+    padding: 50px 0 0 30px;
+}
+
+.eslogan{
+    margin: 0 0 30px 0;
+}
+.eslogan p, .video-presentacion p, .eslogan h1{
+    margin: 0;
+}
+
+.title-eslogan{
+    font-size: var(--font-size-tittle-eslogan);
+}
+
+.subtitle-eslogan{
+    font-size: var(--font-size-tittle-eslogan-2);
+}
+
+.botton_content {
+    border: 1px solid black;
+    display: inline-block;
+}
+.text-botton{
+    color: black;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.simbol{
+    padding: 10px;
+    background-color: black;
+    display: inline-block;
+    margin: 0;
+}
+
+.botton{
+    color: white;
+    text-decoration: none;
+    font-size: var(--font-size-text);
+}
+
+.compatible{
+    padding: 50px 30px 0 0;
+    position: absolute;
+    width: 300px;
+    top: 0%;
+    right: 0%;
+    font-size: var(--font-size-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.img_product{
+    position: relative;
+    left: 800px;
+    top: -100px;
+    width: 35%;
+
+}
+
+.video-presentacion{
+    position: absolute;
+    bottom: 20%;
+    left: 30px;
+}
+
+.promo{
+    width: 400px;
+}
+.title_video{
+    color: white;
+    font-size: 20pt;
+    padding-bottom: 20px;
+}
+
+.separador{
+    width: 90%;
+}

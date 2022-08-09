@@ -1,0 +1,55 @@
+.welcome{
+    margin-left: 50px;
+    margin-right: 50px;
+    position: relative;
+}
+
+.principal{
+    font-size: var(--font-size-tittle-1);
+    margin-right: 20px;
+}
+
+.subtittle{
+    margin-top: 50px;
+    font-size: var(--font-size-tittle-2);
+}
+
+.text p, .text{
+    font-size: var(--font-size-text);
+}
+
+
+.right p{
+    text-align: justify;
+    width: 90%;
+}
+
+.left p{
+    justify-content: left;
+    text-align: justify;
+}
+.left{
+    width: 35%;
+}
+
+.welcome .text-welc{
+    width: 34%;
+}
+
+.part{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+.foto-producto{
+    width: 65%;
+    height: 65%;
+}
+.foto-producto2{
+    width: 40%;
+    height: 40%;
+    margin-left: 10%;
+}

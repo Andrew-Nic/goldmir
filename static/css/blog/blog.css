@@ -1,0 +1,47 @@
+.comment{
+    margin-top: var(--header-height);
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.content-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.button-comment{
+    border: none;
+    border-radius: 0%;
+}
+
+.resume-comments{
+    display: flex;
+    justify-content: space-between;
+}
+
+.comentarios{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.comentario{
+    margin-bottom: 50px;
+}
+
+.title-comentario{
+    background-color: bisque;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info-user{
+    display: flex;
+    flex-direction: row;
+}

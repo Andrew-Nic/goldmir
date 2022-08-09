@@ -1,0 +1,64 @@
+.Roy, .Sigel{
+    margin-left: 50px;
+    margin-right: 50px;
+    position: relative;
+    /* z-index: -15; */
+}
+.text_content{
+    display: flex;
+    align-items: center;
+}
+
+.title-product{
+    border-right: 5px solid;
+    padding-right: 10px;
+}
+
+.title-complement p{
+    font-size: var(--font-size-tittle-3);
+    margin: 0;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.botton{
+    margin-bottom: 30px;
+}
+
+.iconos{
+    height: 50px;
+    width: 80px;
+    background-color: aqua;
+}
+
+.flex{
+    display: flex;
+    align-items:initial;
+    justify-content: space-between;
+
+}
+
+.space{
+    margin-top: 25%;
+}
+
+.img_roy{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 55%;
+}
+
+.buttons-right{
+    align-items: flex-end;
+}
+.img_sigel{
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    width: 33%;
+}

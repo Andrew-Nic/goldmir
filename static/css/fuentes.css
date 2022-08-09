@@ -1,0 +1,26 @@
+
+
+@font-face 
+{
+  font-family: "GlacialIndifference";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/static/fuentes/glacial-indifference/GlacialIndifference-Regular.otf");
+}
+@font-face 
+{
+  font-family: "GlacialIndifference";
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("/static/fuentes/glacial-indifference/GlacialIndifference-Bold.otf");
+}
+@font-face 
+{
+  font-family: "GlacialIndifference";
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/static/fuentes/glacial-indifference/GlacialIndifference-Italic.otf");
+}

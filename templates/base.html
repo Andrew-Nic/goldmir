@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/root.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fuentes.css' %}">
+    {% block css %}
+    {% endblock %}
+    <title>Goldmir</title>
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <nav class="menu">
+            <div class="menu-opciones">
+                <img class="logo" src="{% static 'images/GoldmirHorizontal.svg' %}" alt="logo Goldmir">
+                <ul>
+                    <li class="option"><a href="#home">Sigël</a></li>
+                    <li class="option"><a href="#welcome">Roy</a></li>
+                    <li class="option"><a href="#Roy">Sensores</a></li>
+                    <li class="option"><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="menu-opciones icons">
+                <a href=""><i class="ri-shopping-bag-line icon"></i></a>
+                <a href=""><i class="ri-search-line icon"></i></a>
+            </div>
+        </nav>
+    </header>
+    <!-- contenido -->
+    <div class="contenido">
+        {% block contenido %}
+        {% endblock %}
+    </div>
+    <!-- Footer -->
+    <footer class="contact">
+        <div class="social">
+            <div class="social-content">
+                <p>SUBSCRIBE FOR THE LAST UPDATES</p>
+                <div class="social-media">
+                    <span>Follow Our Social Media</span>
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-youtube-fill"></i></a>
+                    <a href="#"><i class="ri-vimeo-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="enlaces_container">
+            <div class="footer_content grid">
+
+                <div class="footer_data">                      
+                    <div class="footer_title">
+                        <h3>For Bussines</h3>
+                    </div>
+    
+                    <ul>
+                        <li class="footer_item"><a href="#" class="footer_link">Göldmir For Bussines</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Gölden Investor</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Partners</a></li>
+                    </ul>
+                </div>
+    
+    
+                <div class="footer_data">
+                    <div class="footer_title">
+                        <h3>Get to Know Us</h3>
+                    </div>
+                    <ul>
+                        <li class="footer_item"><a href="#" class="footer_link">Carrers</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Inverstors</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Press</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Green Gold</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer_data">
+                    <div class="footer_title">
+                        <h3>Store</h3>
+                    </div>
+                    <ul>
+                        <li class="footer_item"><a href="#" class="footer_link">Ruler Axess</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">GM - System</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Sensores</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Freya &amp; I</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer_data">
+                    <div class="footer_title">
+                        <h3>Services</h3>
+                    </div>
+                    <ul>
+                        <li class="footer_item"><a href="#" class="footer_link">Sopport</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Install</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Software</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Account</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer_data">
+                    <div class="footer_title">
+                        <h3>Let Us Help</h3>
+                    </div>
+                    <ul>
+                        <li class="footer_item"><a href="#" class="footer_link">Customer Service</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Refunds</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Shopping Rates</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Content and Devices</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer_data">
+                    <div class="footer_title">
+                        <h3>Account</h3>
+                    </div>
+                    <ul>
+                        <li class="footer_item"><a href="#" class="footer_link">ID</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Store Account</a></li>
+                        <li class="footer_item"><a href="#" class="footer_link">Partner Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer_rights ">
+            <p class="footer_copy">Copyright © 2019 Göldmir Inc. All rights reserved.</p>
+            <p class="footer_copy"><a href="#">Privaci policy</a> | <a href="#">Sales and Refunds</a> | <a href="#">Legal</a> | <a href="#">Terms Of Use</a> | <a href="#">Site Map</a></p>
+        </div>
+    </footer>
+
+    {% block script %}
+    {% endblock %}
+</body>
+</html>
