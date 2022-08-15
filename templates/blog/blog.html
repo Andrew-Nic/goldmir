@@ -7,31 +7,61 @@
 
 {% block script %}
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
     const vm = new Vue({
         delimiters: ['{$', '$}'],
         el: '#comentario',
         data:{
-            username: 'andrew',
-            fechaPublicacion: 12,
-            numComments: 12 ,
             comments: [],
-            newTitle: '',
-            newText: ''
+            date: "2022-08-11T00:00:00",
+            newTitle: "",
+            newText: "",
+            cantidadDeClaves: "",
         },
 
         methods:{
             hacerComentario(){
-                this.comments.push({
-                    titulo: this.newTitle,
-                    texto: this.newText
-                })
+                $.ajax({
+                    type: "Post",
+                    url: "/api/blog/nuevo-Comentario/",
+                    data:JSON.stringify({
+                        "User": "nuevoUsuario",
+                        "Title": this.newTitle,
+                        "Text": this.newText,
+                        "Date": this.date
+                    }),
+                    success(){
+                        vm.acutalizarComentarios();
+                    }
+                });
 
                 this.newTitle= '';
                 this.newText='';
-                console.log(this.comments);
+
+            },
+
+            leerComentarios(){
+               // document.getElementById('comentariooos').style.display='';
+            },
+
+            acutalizarComentarios(){
+                $.ajax({
+                    type: 'Get',
+                    url: '/api/blog/comentarios/',
+                    contentType: 'aplication/json',
+                    async:true,
+                    success(datos){
+                        //document.getElementById('comentariooos').style.display = 'none';
+                        vm.comments=datos.ComentariosExistentes;
+                        //this.cantidadDeClaves = vm.comments.length;
+                    }
+                })
             }
+        },
+        mounted() {
+            this.acutalizarComentarios();
         }
     });
 </script>
@@ -45,36 +75,36 @@
         <div class="content-form" >
             <div class="inputs">
                 <div class="form-group" id="form">
-                    <label for="title">Title</label>
-                    <input type="text" id="title"v-model="newTitle">
+                    <label for="Title">Title</label>
+                    <input type="text" id="Title" v-model="newTitle">
                 </div>
                 <div class="form-group">
-                    <label for="text">Text</label>
-                    <input type="text" id="title" v-model="newText">
+                    <label for="Text">Text</label>
+                    <input type="text" id="Title" v-model="newText">
                 </div>
             </div>
             <button class="button-comment" @click="hacerComentario()">Submit</button>
         </div>
     
         <div class="resume-comments">
-            <button class="button-comment">Comments</button>
-            <p>{$  numComments $} Comments <i class="ri-discuss-line"></i></p>
+            <button class="button-comment" @click="leerComentarios()">Comments</button>
+            <p>{$  comments.length $} Comments <i class="ri-discuss-line"></i></p>
         </div>
     
         <hr>
     </section>
-    
-    <section class="comentarios" id="comentarios">
-        <article class="comentario" v-for="comentario in comments">
+
+    <section class="comentarios"  v-if="comments.length>0">
+        <article id="ComentarioInvididual" class="comentario" v-for="comentario in comments" >
             <div class="title-comentario">
                 <div class="info-user">
-                    <p>{$username$} - </p>
-                    <h2>{$ comentario.titulo $}</h2>
+                    <p class="usuario">{$comentario.User $} - </p>
+                    <h2 class="titulo">{$ comentario.Title $}</h2>
                 </div>
-                <p>{$ fechaPublicacion $}</p>
+                <p class="date">{$ comentario.Date $}</p>
             </div>
             
-            <p>{$ comentario.texto $}</p>
+            <p class="text">{$ comentario.Text $}</p>
         </article>
     </section>
 </div>
